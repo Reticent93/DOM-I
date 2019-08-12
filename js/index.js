@@ -58,6 +58,22 @@ nav[3].textContent = siteContent.nav['nav-item-4']
 nav[4].textContent = siteContent.nav['nav-item-5']
 nav[5].textContent = siteContent.nav['nav-item-6']
 
+nav[0].style.color = 'green';
+// const image = document.createElement('img')
+// image.src = 'https://placekitten.com/100/100'
+
+let jog = document.querySelector('nav')
+let newElement = document.createElement('a')
+let newC = document.createTextNode('Me!')
+newElement.appendChild(newC);
+jog.appendChild(newElement);
+
+let link = document.querySelector('nav')
+let secondElement = document.createElement('a')
+let secondC = document.createTextNode('Not Me')
+secondElement.prepend(secondC)
+link.prepend(secondElement)
+
 
 
 function setButton() {
