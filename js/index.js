@@ -93,6 +93,14 @@ mainContent.forEach((key => {
 }))
  getIt(mainP, paragraphs);
 
+ let contact = document.querySelectorAll('.contact p')
+ let contactV = Object.values(siteContent['contact']).splice(1,3)
+
+ getIt(contact, contactV);
+
+ 
+let footer = document.querySelector('footer p')
+footer.textContent = siteContent['footer']['copyright'];
 
 
 
