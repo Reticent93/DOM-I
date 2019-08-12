@@ -47,26 +47,57 @@ cta.setAttribute('src', siteContent['cta']['img-src'])
 let middleImage = document.getElementById('middle-img')
 middleImage.setAttribute('src', siteContent['main-content']['middle-img-src'])
 
-const nav = document.querySelectorAll('nav')
-nav.textContent = siteContent.nav['nav-item-1']
 
-// function setButton() {
-//   let button = document.querySelector('.cta-text').children
-//   button[0].append(siteContent.cta.h1);
-//   button[1].append(siteContent.cta.button);
-// }
 
-// setButton();
+let nav = document.querySelectorAll('a')
 
-// const mainContent = document.querySelectorAll ('.main-content');
-// mainContent[0].getElementsByTagName('h4')[0].textContent = siteContent
-// ['main-content']['features-h4'];
-// mainContent[0].getElementsByTagName('p')[0].textContent = siteContent
-// ['main-content']['features-content'];
-// mainContent[0].getElementsByTagName('h4')[1].textContent = siteContent
-// ['main-content']['about-h4'];
-// mainContent[0].getElementsByTagName('p')[1].textContent = siteContent
-// ['main-content']['about-content'];
+nav[0].textContent = siteContent.nav['nav-item-1']
+nav[1].textContent = siteContent.nav['nav-item-2']
+nav[2].textContent = siteContent.nav['nav-item-3']
+nav[3].textContent = siteContent.nav['nav-item-4']
+nav[4].textContent = siteContent.nav['nav-item-5']
+nav[5].textContent = siteContent.nav['nav-item-6']
+
+
+
+function setButton() {
+  let button = document.querySelector('.cta-text').children
+  button[0].append(siteContent.cta.h1);
+  button[1].append(siteContent.cta.button);
+}
+
+setButton();
+
+function getIt(items, values) {
+  items.forEach((item, index) => item.textContent = values[index])
+}
+
+let mainContent = Object.keys(siteContent['main-content']);
+let mainC = document.querySelectorAll ('.text-content h4 ');
+let mainP = document.querySelectorAll('.text-content p ');
+let h4 = [];
+let paragraphs = [];
+
+mainContent.forEach((key => {
+  if(key.includes('h4')){
+    h4.push(siteContent['main-content'][key]);
+  }
+}))
+
+getIt(mainC, h4);
+
+mainContent.forEach((key => {
+  if(key.includes('content')) {
+    paragraphs.push(siteContent['main-content'][key])
+  }
+}))
+ getIt(mainP, paragraphs);
+
+
+
+
+
+
 
 
 
